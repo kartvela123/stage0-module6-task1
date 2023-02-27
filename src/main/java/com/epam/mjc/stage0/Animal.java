@@ -1,9 +1,9 @@
 package com.epam.mjc.stage0;
 
-public class Animal {
-    private String color;
-    private int numberOfPaws;
-    private boolean hasFur;
+public abstract class Animal {
+    private static String color;
+    private static int numberOfPaws;
+    private static boolean hasFur;
 
     public Animal(String color, int numberOfPaws, boolean hasFur) {
         this.color = color;
@@ -11,18 +11,23 @@ public class Animal {
         this.hasFur = hasFur;
 
     }
-    public void getDescription() {
-        String answ = "";
-        String paws = "";
+    public String getDescription() {
+        String answ;
+        String paws;
+        if (numberOfPaws == 1) {
+            paws = "paw";
+        }else {
+            paws = "paws";
+        }
         if (hasFur){
             answ = "a";
-
         }else {
             answ = "no";
         }
-        System.out.println("This animal is mostly  "  +
-                color + ". It has " + numberOfPaws + " paws and " +
-                answ + " fur");
+        return "This animal is mostly  "  +
+                color + ". It has " + numberOfPaws + " " + paws +
+                        " and " +  answ + " fur.";
+
     }
 
 
