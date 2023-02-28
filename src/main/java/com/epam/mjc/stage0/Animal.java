@@ -24,7 +24,7 @@ public class Animal {
         }else {
             answ = "no";
         }
-        return "This animal is mostly  "  +
+        return "This animal is mostly "  +
                 color + ". It has " + numberOfPaws + " " + paws +
                         " and " +  answ + " fur.";
 
